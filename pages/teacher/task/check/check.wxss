@@ -1,0 +1,191 @@
+.pageBody {
+  overflow: hidden;
+}
+
+.check-config-btn {
+  background-color: #1abc9c;
+  width: 250rpx;
+  height: 90rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 32rpx;
+}
+
+.check-config-btn {
+  width: 100%;
+  margin-top: 40rpx;
+}
+
+.check-head {
+  height: 320rpx;
+  width: 100%;
+}
+
+.check-head image {
+  height: 100%;
+  width: 100%;
+}
+
+.check-body {
+  width: 100%;
+  height: auto;
+}
+
+.check-task-open {
+  text-align: right;
+  width: 100%;
+  height: 20rpx;
+  position: absolute;
+  right: 25rpx;
+  bottom: 30rpx;
+  color: #1abc9c;
+}
+
+.check-task-open image {
+  width: 30rpx;
+  height: 15rpx;
+  position: relative;
+}
+
+.check-details {
+  border-bottom: 1px solid #ddd;
+  height: 80rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  width: 100%;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.check-tab {
+  width: 100%;
+  display: flex;
+}
+
+.check-tabItem {
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.check-tabItem-select {
+  border-bottom: 1px solid #1abc9c;
+  color: #1abc9c;
+}
+
+.check-list {
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.check-list .check-item {
+  width: 20%;
+  float: left;
+  text-align: center;
+  height: 160rpx;
+  line-height: 160rpx;
+  padding: 5rpx;
+  box-sizing: border-box;
+}
+
+.check-list .check-item .check-name {
+  width: 100%;
+  height: 30rpx;
+  position: relative;
+  top: -110rpx;
+}
+
+.check-list image {
+  width: 90rpx;
+  height: 90rpx;
+  position: relative;
+  top: 10rpx;
+}
+
+.check-listTwo {
+  width: 100%;
+}
+
+.check-listTwo .check-listTwo-body {
+  width: 100%;
+  display: flex;
+  height: 110rpx;
+  line-height: 110rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+
+.check-listTwo-body .check-listTwo-img {
+  width: 100rpx;
+  height: 100%;
+}
+
+.check-listTwo .check-listTwo-body image {
+  width: 90rpx;
+  height: 90rpx;
+  position: relative;
+  top: 10rpx;
+}
+
+.check-listTwo .check-listTwo-body .check-listTwo-name {
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+  font-size: 26rpx;
+}
+
+.check-listTwo-date {
+  /* float: right; */
+  padding: 20rpx;
+  font-size: 26rpx;
+  color: #ccc;
+  width: 200rpx;
+  box-sizing: border-box;
+  line-height: 70rpx;
+  
+}
+
+.check-listTwo-voice {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ffb58b;
+  color: #ffb58b;
+  background-color: #fffcf2;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+}
+
+.check-listTwo-userInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.clu-date {
+  width: 100%;
+  text-align: left;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.clu-name {
+  width: 100%;
+  text-align: left;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: black;
+}
+
+.check-listTwo-name {
+  display: flex;
+}

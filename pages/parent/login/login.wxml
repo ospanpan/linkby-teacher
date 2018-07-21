@@ -1,0 +1,45 @@
+<view class="pageBody">
+  <view class='login-logo'>
+    <view>
+      <image src='/icons/parent-logo.png'></image>
+    </view>
+    <view>领百教育</view>
+  </view>
+  <view class='login-input' wx:if="{{!isPhoneLogin}}">
+    <view class='login-txt'>
+      <image src='/icons/phone.png' style='width:25rpx;'></image>
+      <input type="text" placeholder="手机号码" placeholder-class="login-p-class" bindinput='userPhone_input' value='{{userPhone}}' />
+      <image class='login-v-clean' wx:if="{{isShowClear}}" bindtap='cleanUserPhone' src='/icons/clean.png'></image>
+    </view>
+    <view class='login-txt'>
+      <image src='/icons/verification.png' style='width:25rpx;'></image>
+      <input type="text" class="login-v-input" placeholder="验证码" value='{{yzm}}' bindinput='yzm_input' placeholder-class="login-p-class" />
+      <image class='login-v-img' wx:if="{{isShowCorrect}}" src='/icons/correct.png'></image>
+      <view class='login-verification  {{ sendable ? "send-btn-enable" : ""}}' bindtap='sendVerification'>{{verificationText}}</view>
+    </view>
+    <view class='tipError'>{{isShowError?'手机号或者验证码错误':''}}</view>
+    <view class='{{loginBtnCls}}' bindtap="toLogin">登录</view>
+    <view class='login-switch' bindtap="toTeacher">切换为老师端 ></view>
+  </view>
+  <view class='login-input login-input-phone' wx:if="{{isPhoneLogin}}">  
+  请您先绑定手机号码再继续操作
+    <view class='login-btn' bindtap="toHomePage">微信快速登录</view>
+    <view class='login-phone' bindtap='inputLogin'>输入手机号码登录</view>
+    <!-- <view class='login-switch' bindtap="toTeacher">切换为老师端 ></view> -->
+  </view>
+  <view class="login-shadow" wx:if="{{hideview}}">
+  </view>
+  <!-- wx:if="{{hideview}}" -->
+  <view class='login-classBydy' wx:if="{{hideview}}">
+    <view class='login-class'>
+      <view class='login-class-title'>您已被邀请加入以下班级</view>
+      <view class='login-classList'>
+        <ul>
+          <li wx:for="{{classList}}" wx:for-item="classItem" wx:key="{{}}">
+            <view>·</view> {{classItem.value}}</li>
+        </ul>
+      </view>
+      <view class='login-classBtn' bindtap='goToHomePage'>确认加入班级</view>
+    </view>
+  </view>
+</view>

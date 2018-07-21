@@ -1,0 +1,22 @@
+<view class="pageBody">
+  <view class='class-input'>
+    <view class='class-input-title'>确认信息</view>
+    <view class='class-txt'>
+      <image src='/icons/login-sho.png' style='width:25rpx;'></image>
+      <input type="text" placeholder="您的真实姓名" placeholder-class="class-p-class" value='{{realName}}' name="realName" bindinput='input_realName'/>
+    </view>
+    <view class='class-txt'>
+      <image src='/icons/class.png' style='width:25rpx;'></image>
+      <input type="text" placeholder="输入您的学校" placeholder-class="class-p-class"  value='{{schoolName}}' name="schoolName" bindinput='input_schoolName'/>
+    </view>
+    <view class='class-btn'  bindtap="toSave">确认</view>
+  </view>
+  <view class='class-shadow' hidden="false">
+  </view>
+  <view class='class-configBody' hidden="false">
+    <view class='class-config'>
+      <view>请输入完整信息</view>
+      <view class='class-config-btn'>确定</view>
+    </view>
+  </view>
+</view>

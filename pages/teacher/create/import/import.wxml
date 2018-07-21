@@ -1,0 +1,11 @@
+<view class="pageBody gradeBody">
+  <view class='import-QRcode'>
+    <view class='import-QRcodeImg'>
+    </view>
+  </view>
+  <view class='import-info'>
+    恭喜，您已成功创建班级！
+  </view>
+  <view class='import-parent'>+ 导入家长</view>
+  <view class='import-homePage' bindtap='toPageHome'>进入首页</view>
+</view>

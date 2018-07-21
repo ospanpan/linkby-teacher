@@ -1,0 +1,21 @@
+<view class="class-body">
+  <view class='class-input'>
+    <view class='class-text'>
+      <image src='/icons/p2.png' class='class-icon'>
+      </image>
+      <input type="text" placeholder="班级" placeholder-class="class-p-class" />
+    </view>
+    <view class='class-text'>
+      <image src='/icons/p2.png' class='class-icon'>
+      </image>
+      <input type="text" placeholder="年级" placeholder-class="class-p-class" />
+    </view>
+        <view class='class-text'>
+      <image src='/icons/p2.png' class='class-icon'>
+      </image>
+      <input type="text" placeholder="班级" placeholder-class="class-p-class" />
+    </view>
+    <view class='class-btn'>创建班级</view>
+  </view>
+
+</view>

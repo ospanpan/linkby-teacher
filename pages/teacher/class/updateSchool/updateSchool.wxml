@@ -1,0 +1,19 @@
+<view class="pageBody">  
+  <view class='class-input'>
+    <view class='class-txt'>
+      <image src='/icons/login-sho.png' style='width:25rpx;'></image>
+      <input type="text" placeholder="学校" placeholder-class="class-p-class" value='{{schoolName}}' bindinput='schoolName_input'/>
+    </view>
+    <view class='class-txt' bindtap='selGrade'>
+      <image src='/icons/grade.png' style='width:25rpx;'></image>
+      <input disabled type="text" placeholder="年级" placeholder-class="class-p-class" value="{{gradeName}}"/>
+      <image class='class-v-clean imgSelect' src='/icons/return.png'></image>
+    </view>
+
+    <view class='class-txt'>
+      <image src='/icons/class.png' style='width:25rpx;'></image>
+      <input type="text" placeholder="班级" placeholder-class="class-p-class" value="{{classNo}}" bindinput='classNo_input'/>
+    </view>
+    <view class='class-btn' bindtap='saveClasses'>保  存</view>
+  </view>
+</view>

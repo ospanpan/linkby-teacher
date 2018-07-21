@@ -1,0 +1,29 @@
+.noticeBody {
+  background-color: #f2f2f2;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  justify-content: inherit;
+}
+
+.notice-body{
+  background-color: #ffffff;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%;
+}
+
+.notice-title{
+  font-weight: bold;
+}
+.notice-content{
+  margin-top: 20rpx;
+  line-height: 50rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+.notice-date{
+  height: 50rpx;
+  line-height: 80rpx;
+}

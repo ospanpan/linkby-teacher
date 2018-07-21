@@ -1,0 +1,23 @@
+<view class="pageBody rt-body">
+  <view class='releasetask-txt'>
+    <textarea placeholder='文字说明' maxlength='200' bindinput='content_input' value='{{content}}'></textarea>
+    <view class="weui-textarea-counter">{{content.length}}/200</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-uploader__bd">
+      <view class="weui-uploader__files" id="uploaderFiles">
+        <block wx:for="{{files}}" wx:key="*this">
+          <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+            <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+          </view>
+        </block>
+      </view>
+      <view class="weui-uploader__input-box">
+        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+      </view>
+    </view>
+  </view>
+  <view class='releasetask-body'>
+    <view class='releasetask-btn' bindtap='pubHomework'>确认发布</view>
+  </view>
+</view>

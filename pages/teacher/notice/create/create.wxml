@@ -1,0 +1,18 @@
+<view class="pageBody">
+  <view class='cc-input-border'>
+    <input type='text' class="weui-textarea" placeholder="请输入通知标题" value='{{title}}' bindinput='title_input'/>
+  </view>
+  <view class='cc-input'>
+    <textarea class="weui-textarea" placeholder="请输入通知内容" style="height: 300rpx" value='{{content}}' bindinput='content_input'/>
+    <view class="weui-textarea-counter">{{content.length}}/100</view>
+  </view>
+
+  <view class="page__bd page__bd_spacing">
+    <button class="weui-btn" type="primary" bindtap='PubNotice'>确认发布</button>
+  </view>
+  <view class='task-tip'>
+    注意事项： </view>
+  <view class='task-tip'>
+    1.清仔细教研通知内容，发布后不允许修改通知内容,以免对家长造成干扰 </view>
+  <view class='task-tip'>2.清提醒家长关注“XXXX”公众号,通知发布后会通过公众号第一时间通知所有家长 </view>
+</view>

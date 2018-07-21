@@ -1,0 +1,46 @@
+<view class="pageBody">
+  <view class='check-head'>
+    <image src='{{homeWork!=null && homeWork.imageArr!=null && homeWork.imageArr.length>0 ? homeWork.imageArr[0] : "/icons/id_000001_img.png" }}' bindtap='imgYu'></image>
+  </view>
+  <view wx:if="{{homeWork.content!=null}}" class='check-details' style='height:{{detailsHeight}}'>
+    {{homeWork.content}}
+    <view class='check-task-open' bindtap='showDetails' >
+    {{isShowDetails?'收起':'展开'}}      
+      <image src='/icons/open.png' style="transform:rotate({{isShowDetails?'180':'0'}}deg);"></image>
+    </view>
+  </view>
+  <view class='check-body'>
+    <view class='check-tab'>
+      <view class="{{wwc?'check-tabItem check-tabItem-select':'check-tabItem'}}" bindtap='noComplete'>
+        未完成（{{ homeWork.totalStudents-homeWork.finishedStudents }}）
+      </view>
+      <view class="{{!wwc?'check-tabItem check-tabItem-select':'check-tabItem'}}" bindtap='complete'>
+        已完成（{{homeWork.finishedStudents}}）
+      </view>
+    </view>
+    <view class='check-list' wx:if="{{wwc}}">
+      <view wx:for="{{unFinishedList}}" wx:for-item="tItem" wx:key="{{}}" class='check-item'>
+        <image src='/icons/id_00001.png'></image>
+        <view class='check-name'>{{tItem.realName}}</view>
+      </view>
+    </view>
+    <view class='check-listTwo' wx:if="{{!wwc}}">
+      <view class="check-listTwo-body" wx:for="{{finishedList}}" wx:for-item="tItem" wx:key="{{}}">
+        <view class='check-listTwo-img'>
+          <image src='/icons/id_00001.png'></image>
+        </view>
+
+        <view class='check-listTwo-name'>
+          <view class='check-listTwo-userInfo'>
+            <view class='clu-name'>{{tItem.student}}</view>
+            <view class='clu-date'>{{tItem.updateDateTxt}}</view>
+          </view>
+          <view class='check-listTwo-date'>
+            <view class='check-listTwo-voice'>
+              5"</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

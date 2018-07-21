@@ -1,0 +1,60 @@
+<view class="pageBody">
+  <scroll-view class="homepage">
+    <view class='homepage-tabs'>
+      <view class="{{showRelease?'viewSelect':''}}" bindtap='switchTabs'>发布作业</view>
+      <view class="{{!showRelease?'viewSelect':''}}" bindtap='switchTabsTwo'>作业反馈</view>
+    </view>
+    <view class="homepage-scrool-body">
+      <scroll-view wx:if="{{showRelease}}" class='homepage-task-body' scroll-y='true' bindscrolltoupper="refreshLastHomework">
+        <view class='homepage-task'>
+          <view class='hp-task-state'>
+            <image src='/icons/addTask.png'></image>
+            <view class="{{isRelease?'hp-task-release':''}}" bindtap='toReleaseHomework'>{{isRelease?'今日已发布':'发布作业'}}</view>
+          </view>
+        </view>
+        <view class='hp-fankui-body'>
+          <view class='hp-fankui-item' wx:if="{{lastHomework!=null}}" data-id="{{lastHomework.id}}" data-classesid="{{lastHomework.classesId}}" data-schoolid="{{lastHomework.schoolId}}" bindtap='toHomeworkDetails'>
+            <view class='hp-fankui-img'>
+              <image src='{{lastHomework.imageIds}}'></image>
+              <view wx:if="{{lastHomework.content!=null}}" class='hp-fankui-shadow'></view>
+              <view wx:if="{{lastHomework.content!=null}}" class='hp-fankui-shadow-text width-90p linkby-ellipsis'>{{ lastHomework.content }}</view>
+            </view>
+            <view class='hp-fankui-date'>
+              <view class='hp-task-time'>发表于 {{lastHomework.updateDateTxt}}</view>
+              <view class='hp-task-confirm'>完成情况
+                <label>{{lastHomework.finishedStudents}}</label> / {{lastHomework.totalStudents}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <view class="refresh-pulldown" hidden="{{hidePullDown}}">
+        <view>正在刷新...</view>
+      </view>
+      <scroll-view class="homepage-task-body homepage-taskList" wx:if="{{!showRelease}}" scroll-y='true' bindscrolltolower="loadMoreHomework" bindscrolltoupper="refreshHomework">
+        <view class="task-scrool-body">
+          <view class='task-item' wx:for="{{homeworkList}}" wx:for-item="tItem" data-id="{{tItem.id}}" data-classesid="{{tItem.classesId}}" data-schoolid="{{tItem.schoolId}}" wx:key="{{}}" bindtap='toHomeworkDetails'>
+            <view class='task-data'>{{tItem.updateDateTxt}}  {{tItem.weekday}}</view>
+            <view class='hp-fankui-item'>
+              <view class='hp-fankui-img'>
+                <image src="{{tItem.imageIds!=null&&tItem.imageIds!='' ? tItem.imageIds : '/icons/img1.png'}}"></image>
+                <view class='hp-fankui-shadow'></view>
+                <view class='hp-fankui-shadow-text width-90p linkby-ellipsis'>{{(tItem.content!=null&&tItem.content!="") ? tItem.content : '今日作业已发布，请准时反馈！' }}</view>
+              </view>
+              <view class='hp-fankui-date'>
+                <view class='hp-task-time'>发表于  {{ tItem.updateDateTxt }}</view>
+                <view class='hp-task-confirm'>完成情况
+                  <label>{{tItem.finishedStudents}}</label> / {{tItem.totalStudents}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="loadmore-pullup" hidden="{{hidePullUp}}">
+            <view>正在加载...</view>
+          </view>
+          <view class="no-more-load" hidden="{{hideNoMore}}">
+            <view>已经见底啦</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,230 @@
+.class-input {
+  width: 70%;
+  height: 400rpx;
+  margin-top: 100rpx;
+}
+
+.class-txt {
+  width: 100%;
+  height: 80rpx;
+  margin-bottom: 15rpx;
+  border-bottom: 1rpx solid #ccc;
+  display: flex;
+}
+
+.class-txt image {
+  width: 30rpx!important;
+  height: 30rpx!important;
+  position: relative;
+  top: 20rpx;
+}
+.class-txt .imgSelect {
+  width: 15rpx!important;
+  height: 20rpx!important;
+  position: relative;
+  top: 25rpx;
+}
+.class-txt input {
+  padding-left: 20rpx;
+  flex: 1;
+  position: relative;
+  top: 15rpx;
+  margin-right: 10rpx;
+}
+
+.class-p-class {
+  color: #ccc;
+  font-size: 24rpx;
+}
+
+.class-verification {
+  position: relative;
+  right: 10rpx;
+  font-size: 27rpx;
+  top: 10rpx;
+  background-color: #f2f2f2;
+  width: 150rpx;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 20rpx;
+}
+
+.class-v-input {
+  width: 120rpx;
+}
+
+.class-v-img {
+  position: relative;
+  left: -100rpx;
+}
+
+.class-v-clean {
+  left: 0rpx;
+}
+
+.class-btn {
+  height: 80rpx;
+  border-radius: 30rpx;
+  background-color: #1abc9c;
+  line-height: 80rpx;
+  color: #fff;
+  margin-top: 70rpx;
+  text-align: center;
+}
+
+.class-switch {
+  float: right;
+  margin-top: 25rpx;
+  color: #888;
+  font-size: 26rpx;
+}
+
+.class-shadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #333;
+  z-index: 9;
+  opacity: 0.5;
+}
+
+.class-configBody,.class-configBodyTow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.class-config,.class-class {
+  width: 500rpx;
+  height: 250rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  margin-top: -100rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 32rpx;
+  color: black;
+}
+
+.class-config view {
+  margin-top: 40rpx;
+}
+
+.class-config-btn {
+  background-color: #1abc9c;
+  width: 250rpx;
+  height: 90rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 32rpx;
+}
+.class-class{
+  height: auto;
+  width: 600rpx;
+  margin-top: -120rpx;
+}
+.class-class view{
+  margin-top: 50rpx;
+}
+.class-classList{
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+}
+.class-class-title{
+  text-align: left;
+  width: 80%;
+  font-size: 28rpx;
+}
+.class-classList view{
+  width: 220rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #ff9e5c;
+  border-radius: 40rpx;
+  border: 1rpx solid #ff9e5c;
+  float: left;
+  margin: 0 20rpx;
+}
+.class-classList .selectView{
+  color: #ffffff;
+  background-color:#ff9e5c; 
+}
+.class-classBtn{
+  width: 100%;
+  height:90rpx;
+  line-height: 90rpx;
+  background-color: #1abc9c;
+  color: #ffffff;
+  text-align: center;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.class-class{
+  position: relative;
+}
+
+.class-tabs{
+  height: 100rpx;
+  background-color: #ff9e5c;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.class-tabs .class-tab{
+  width: 50%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 30rpx;
+  position: relative;
+
+}
+.class-w-s{
+    width: 0;
+    height: 0;
+    border-left: 10rpx solid transparent;
+    border-right: 10rpx solid transparent;
+    border-bottom: 10rpx solid #ffffff;
+    position: absolute;
+    top: 60rpx;
+    left: 47%;
+}
+.class-configBodyTow .class-config{
+  width:470rpx;
+  height: 260rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  padding: 50rpx 50rpx 0 50rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 28rpx;
+
+  color: black;
+}
+
+.class-configBodyTow .class-config view{
+  margin-top: 0;
+}
+
+.class-configBodyTow .class-config .class-config-btn{
+  width: 100%;
+  margin-top: 40rpx;
+}

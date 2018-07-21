@@ -1,0 +1,53 @@
+.gradeBody {
+  display: flex;
+  flex-direction: column;
+  /* padding: 30rpx; */
+}
+
+.grade-item {
+  width: 100%;
+}
+
+.grade-head {
+  padding: 0 30rpx 30rpx 30rpx;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.grade-title {
+  width: 100%;
+  text-align: left;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.grade-title image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+}
+
+.grade-list {
+  width: 100%;
+}
+
+.grade-list view {
+  float: left;
+  width: 207rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 1px solid #1abc9c;
+  border-radius: 5rpx;
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+  color: #1abc9c;
+}
+
+.grade-item-select {
+  background-color: #1abc9c;
+  color: #ffffff!important;
+}

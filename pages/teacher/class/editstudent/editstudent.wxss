@@ -1,0 +1,53 @@
+.pageBody {
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: initial;
+  padding: 30rpx;
+  box-sizing: border-box;
+  align-items: initial;
+  border-top: 1px solid #ccc;
+  color: #333;
+  font-size: 34rpx;
+}
+
+.us-name {
+  margin: 30rpx 0;
+}
+
+.us-text {
+  background-color: #f2f2f2;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.us-text input {
+  font-size: 36rpx;
+  height: 80rpx;
+  padding-left: 20rpx;
+}
+.us-text image{
+  height: 30rpx;
+  width: 15rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 30rpx;
+}
+.appellation-picker,.appellation-picker-view{
+  font-size: 36rpx;
+  height: 80rpx;
+  padding-left: 20rpx;
+}
+.class-btn {
+  height: 80rpx;
+  border-radius: 10rpx;
+  background-color: #1abc9c;
+  line-height: 80rpx;
+  color: #fff;
+  margin-top: 70rpx;
+  text-align: center;
+}

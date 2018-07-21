@@ -1,0 +1,240 @@
+<view class="pageBody">
+  <scroll-view class="homepage" wx:if="{{showHomepage}}">
+    <view class='homepage-tabs'>
+      <view class="{{showRelease?'viewSelect':''}}" bindtap='switchTabs'>发布作业</view>
+      <view class="{{!showRelease?'viewSelect':''}}" bindtap='switchTabsTwo'>作业反馈</view>
+    </view>
+    <view class="homepage-scrool-body">
+      <view wx:if="{{showRelease}}" class='homepage-task-body' scroll-y='true'>
+        <view class='homepage-task'>
+          <view class='hp-task-state'>
+            <image src='/icons/addTask.png'></image>
+            <view class="{{isRelease?'hp-task-release':''}}" bindtap='toReleaseHomework'>{{isRelease?'今日已发布':'发布作业'}}</view>
+          </view>
+        </view>
+        <view class='hp-fankui-body'>
+          <view class='hp-fankui-item' wx:if="{{lastHomework!=null}}" data-id="{{lastHomework.id}}" data-classesid="{{lastHomework.classesId}}" data-schoolid="{{lastHomework.schoolId}}" bindtap='toHomeworkDetails'>
+            <view class='hp-fankui-img'>
+              <image src='{{lastHomework.imageIds}}'></image>
+              <view wx:if="{{lastHomework.content!=null}}" class='hp-fankui-shadow'></view>
+              <view wx:if="{{lastHomework.content!=null}}" class='hp-fankui-shadow-text width-90p linkby-ellipsis'>{{ lastHomework.content }}</view>
+            </view>
+            <view class='hp-fankui-date'>
+              <view class='hp-task-time'>发表于 {{lastHomework.updateDateTxt}}</view>
+              <view class='hp-task-confirm'>完成情况
+                <label>{{lastHomework.finishedStudents}}</label> / {{lastHomework.totalStudents}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <scroll-view class="homepage-task-body homepage-taskList" wx:if="{{!showRelease}}" scroll-y='true'>
+        <view class="task-scrool-body">
+          <view class='task-item' wx:for="{{homeworkList}}" wx:for-item="tItem" data-id="{{tItem.id}}" data-classesid="{{tItem.classesId}}" data-schoolid="{{tItem.schoolId}}" wx:key="{{}}" bindtap='toHomeworkDetails'>
+            <view class='task-data'>{{tItem.updateDateTxt}}  {{tItem.weekday}}</view>
+            <view class='hp-fankui-item'>
+              <view class='hp-fankui-img'>
+                <image src="{{tItem.imageIds!=null&&tItem.imageIds!='' ? tItem.imageIds : '/icons/img1.png'}}"></image>
+                <view class='hp-fankui-shadow'></view>
+                <view class='hp-fankui-shadow-text width-90p linkby-ellipsis'>{{(tItem.content!=null&&tItem.content!="") ? tItem.content : '今日作业已发布，请准时反馈！' }}</view>
+              </view>
+              <view class='hp-fankui-date'>
+                <view class='hp-task-time'>发表于  {{ tItem.updateDateTxt }}</view>
+                <view class='hp-task-confirm'>完成情况
+                  <label>{{tItem.finishedStudents}}</label> / {{tItem.totalStudents}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </scroll-view>
+
+  <scroll-view class="homepage" wx:if="{{showNotice}}">
+    <view class='homepage-tabs'>
+      <view class="{{!showNoticeList?'viewSelect':''}}" bindtap='switchTaskTabs'>发布通知</view>
+      <view class="{{showNoticeList?'viewSelect':''}}" bindtap='switchTaskTabsTwo'>通知列表</view>
+    </view>
+    <view class="homepage-scrool-body">
+      <view wx:if="{{!showNoticeList}}" class='homepage-task-body' scroll-y='true'>
+        <view class='homepage-task'>
+          <view class='hp-task-state'>
+            <image src='/icons/head.png'></image>
+            <view class="hp-notice-state" bindtap='toPubNotice'>发布通知</view>
+          </view>
+        </view>
+        <view wx:if="{{lastNotice!=null}}" class='hp-task-item' data-noticeid="{{lastNotice.id}}" data-classesid="{{lastNotice.classesId}}" data-schoolid="{{lastNotice.schoolId}}" bindtap='toNoticeDetails'>
+          <view class='hp-task-list'>
+            <view class='hp-notice-item'>
+              <view class='hp-notice-itemTop'>
+                <view class='hp-notice-img'>
+                  <image src='/icons/head.png'></image>
+                </view>
+                <view class='hp-notice-itemBody'>
+                  <view class='hp-notice-itemTitle width-90p linkby-ellipsis-1'>
+                    {{lastNotice.title}}
+                  </view>
+                  <view class='hp-notice-itemContent linkby-ellipsis-4'>
+                    {{lastNotice.content}}
+                  </view>
+                </view>
+              </view>
+              <view class='hp-task-dataOrConfirm'>
+                <view class='hp-task-time'>发表于 {{lastNotice.createDate}}</view>
+                <view class='hp-task-confirm'>阅读情况
+                  <label>{{lastNotice.readStudents}}</label> / {{lastNotice.totalStudents}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <scroll-view class="homepage" wx:if="{{showNoticeList}}" scroll-y='true'>
+        <view class="task-scrool-body" style='background-color: #ffffff;'>
+          <view class="notice-list {{tItem.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" wx:for="{{noticeList}}" wx:for-item="tItem" wx:key="{{}}" bindtouchmove="touchmove">
+            <view data-noticeid="{{tItem.id}}" data-classesid="{{tItem.classesId}}" data-schoolid="{{tItem.schoolId}}" class='notice-item' bindtouchstart="touchstart" bindtap='toNoticeDetails'>
+              <view class='notice-sign'>
+                <view class='task-state'></view>
+              </view>
+              <view class='notice-body'>
+                <view class='notice-head linkby-ellipsis-1 width-90p'>
+                  {{tItem.title}}
+                </view>
+                <view class='notice-date'>
+                  日期: {{tItem.createDate}}
+                </view>
+                <image src='/icons/return.png' class='notice-icon'></image>
+              </view>
+            </view>
+            <view class='del' data-index="{{index}}">
+              <image src='/icons/delete-list.png'></image>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </scroll-view>
+
+  <scroll-view class="circle" wx:if="{{showCircle}}" scroll-y='true'>
+    <view class="circle-scrool-body">
+      <view class="circle-head">
+        <image class='circle-backImg' src='/icons/backImg.png'></image>
+        <image class='circle-head-portrait' src='/icons/id_00001.png'></image>
+        <view class='circle-head-name'>{{teacherInfo.realName}} 老师</view>
+      </view>
+      <view class='circle-btn' bindtap='createCircle'>发布动态</view>
+      <view class='circle-item' wx:for="{{dynamicsList}}" wx:for-item="item" wx:key="{{}}">
+        <view class='circle-item-head'>
+          <view class='circle-item-portrait'>
+            <image src='/icons/id_00001.png'></image>
+          </view>
+          <view class='circle-item-content'>
+            <view class='circle-item-name'>{{item.dynamics.alias}}</view>
+            <view class='circle-item-uouo'>{{item.dynamics.content}}</view>
+            <view class='circle-item-imgList' wx:if="{{item.dynamics.imgArr&&item.dynamics.imgArr.length>0}}">
+              <view wx:if="{{item.dynamics.imgArr&&item.dynamics.imgArr.length==1}}" class='circle-item-img1'>
+                <image src='{{item.dynamics.imgArr[0]}}' data-id="{{item.dynamics.id}}" bindtap='imgYu'></image>
+              </view>
+              <view wx:if="{{item.dynamics.imgArr&&item.dynamics.imgArr.length>1&&item.dynamics.imgArr.length<4}}" class='circle-item-img2'>
+                <image src='{{imgItem}}' bindtap='imgYu' wx:for="{{item.dynamics.imgArr}}" 
+                wx:for-item="imgItem" wx:key="{{}}" data-id="{{item.dynamics.id}}" bindtap='imgYu'></image>
+              </view>
+              <view wx:if="{{item.dynamics.imgArr&&item.dynamics.imgArr.length>3&&item.dynamics.imgArr.length<7}}" class='circle-item-img3'>
+                <image src='{{imgItem}}' wx:for="{{item.dynamics.imgArr}}" 
+                wx:for-item="imgItem" wx:key="{{}}" data-id="{{item.dynamics.id}}" bindtap='imgYu'></image>
+              </view>
+              <view wx:if="{{item.dynamics.imgArr&&item.dynamics.imgArr.length>6}}" class='circle-item-img4'>
+                <image src='{{imgItem}}' wx:for="{{item.dynamics.imgArr}}" 
+                wx:for-item="imgItem" wx:key="{{}}" data-id="{{item.dynamics.id}}" bindtap='imgYu'></image>
+              </view>
+            </view>
+            <view class='circle-item-operation'>
+              <view class='circle-item-time'>{{item.dynamics.showTimeTxt}}</view>
+              <view class='circle-item-delete' data-id="{{item.dynamics.id}}" bindtap='deleteCircle'>
+                <image class='circle-delete-img' src='/icons/delete.png'></image> 删除
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <scroll-view wx:if="{{showMy}}" class="my" scroll-y='true'>
+    <view class="my-scroll-body">
+      <view class='my-head'>
+        <image src='/icons/id_00001.png'></image>
+        <view>{{teacherInfo.realName}} 老师</view>
+      </view>
+      <view class='my-body' scroll-y='true'>
+        <view class='my-classList'>
+          <view class='my-classCheck'>查看班级</view>
+
+          <view wx:if="{{allClasses.length>0}}" wx:for="{{allClasses}}" wx:for-item="cItem" wx:for-index="idx" class='my-classInfo {{idx==allClasses.length-1 ? "my-lastClassInfo" : ""}}' wx:key="{{cItem.classesId}}">
+            <image src='/icons/id_00001.png'></image>
+            <view class='my-className'>{{cItem.gradeName}}{{cItem.alias}}</view>
+            <view class='my-classBtn' data-classid="{{cItem.classesId}}" data-schoolid="{{cItem.schoolId}}" data-classname="{{cItem.schoolName}}{{cItem.alias}}" wx:if="{{teacherInfo.curClassesId==cItem.classesId}}">当前</view>
+            <view class='my-classSwitchBtn' data-classid="{{cItem.classesId}}" data-schoolid="{{cItem.schoolId}}" data-classname="{{cItem.schoolName}}{{cItem.alias}}" wx:if="{{teacherInfo.curClassesId!=cItem.classesId}}" bindtap='toChangeClasses'>切换</view>
+            <view class='my-classBtn mgl20' data-classid="{{cItem.classesId}}" data-schoolid="{{cItem.schoolId}}" data-classname="{{cItem.schoolName}}{{cItem.alias}}" bindtap='toManageClasses'>管理</view>
+          </view>
+
+          <view wx:if="{{allClasses.length==0}}" class='my-classInfo my-lastClassInfo my-classInfo-center'>
+          您暂未加入任何班级
+          </view>
+
+        </view>
+        <view class='my-create-class' bindtap='toCreateManager'>
+          +创建班级
+        </view>
+
+        <view class='my-circle'>
+          <view>意见反馈</view>
+          <image class='my-circle-ret' src='/icons/return.png'></image>
+        </view>
+        <!-- <view class='my-circle my-Lastcircle'>
+          <view class='my-Lastcircle-border'>
+            <view>意见反馈</view>
+            <image class='my-circle-ret' src='/icons/return.png'></image>
+          </view>
+        </view> -->
+        <view class='my-signOut' bindtap='toLogout'>
+          <view>退出</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class='menu'>
+    <view class='menu-item' bindtap='showHomepage'>
+      <view class='menu-img'>
+        <image src='/icons/class.png'></image>
+      </view>
+      <view class='{{showHomepage?"menu-txt menu-txt-select":"menu-txt"}}'>作业</view>
+    </view>
+    <view class='menu-item' bindtap='showNotice'>
+      <view class='menu-img'>
+        <image src='/icons/task.png'></image>
+      </view>
+      <view class='{{showNotice?"menu-txt menu-txt-select":"menu-txt"}}'>通知</view>
+    </view>
+    <view class='menu-item' bindtap='showCircle'>
+      <view class='menu-img'>
+        <image src='/icons/not.png'></image>
+      </view>
+      <view class='{{showCircle?"menu-txt menu-txt-select":"menu-txt"}}'>状态</view>
+    </view>
+    <view class='menu-item' bindtap='showMy'>
+      <view class='menu-img'>
+        <image src='/icons/my.png'></image>
+      </view>
+      <view class='{{showMy?"menu-txt menu-txt-select":"menu-txt"}}'>我的</view>
+    </view>
+  </view>
+
+  <view class='circle-shadow' wx:if="{{showShadow}}"></view>
+  <view class='circle-confrim' wx:if="{{showShadow}}">
+    <view class='circle-confrim-info'>确认删除这条状态吗？</view>
+    <view class='circle-confrim-btns'>
+      <view class='circle-confrim-confirm' data-type="{{delType}}" data-id="{{delId}}" bindtap='delConfirm'>确定</view>
+      <view class='circle-confrim-cancel' bindtap='hideShadow'>取消</view>
+    </view>
+  </view>
+</view>

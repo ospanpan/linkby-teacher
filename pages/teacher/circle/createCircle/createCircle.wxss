@@ -1,0 +1,38 @@
+.pageBody {
+  background-color: #f2f2f2;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content:initial;
+}
+
+.cc-input {
+  height: 360rpx;
+  width: 100%;
+  padding: 20rpx ;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.weui-textarea{
+
+}
+.weui-textarea-counter{
+  padding-bottom: 30rpx;
+}
+
+.page__bd {
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.page__bd_spacing{
+  background-color: transparent;
+  
+}
+.page__bd_spacing .weui-btn{
+background-color: #17c6ee;
+}
+

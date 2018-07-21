@@ -1,0 +1,56 @@
+<view class="pageBody">
+  <view class="refresh-pulldown" hidden="{{hidePullDown}}">
+    <view>正在刷新...</view>
+  </view>
+  <scroll-view class="circle" scroll-y='true' bindscrolltolower="loadMoreCycle" bindscrolltoupper="refreshCycle">
+    <view class="circle-scrool-body">
+      <view class="circle-head">
+        <image class='circle-backImg' src='/icons/backImg.png'></image>
+        <image class='circle-head-portrait' src='/icons/id_00001.png'></image>
+        <view class='circle-head-name'>{{teacherInfo.realName}} 老师</view>
+      </view>
+      <view class='circle-btn' bindtap='createCircle'>发布动态</view>
+      <view class='circle-item' wx:for="{{dynamicsList}}" wx:for-item="item" wx:key="{{}}">
+        <view class='circle-item-head'>
+          <view class='circle-item-portrait'>
+            <image src='/icons/id_00001.png'></image>
+          </view>
+          <view class='circle-item-content'>
+            <view class='circle-item-name'>{{item.dynamics.alias}}</view>
+            <view class='circle-item-uouo'>{{item.dynamics.content}}</view>
+            <view class='circle-item-imgList' wx:if="{{item.dynamics.imgArr&&item.dynamics.imgArr.length>0}}">
+              <view wx:if="{{item.dynamics.imgArr&&item.dynamics.imgArr.length==1}}" class='circle-item-img1'>
+                <image src='{{item.dynamics.imgArr[0]}}' data-id="{{item.dynamics.id}}" bindtap='imgYu'></image>
+              </view>
+              <view wx:if="{{item.dynamics.imgArr&&item.dynamics.imgArr.length>1&&item.dynamics.imgArr.length<4}}" class='circle-item-img2'>
+                <image src='{{imgItem}}' bindtap='imgYu' wx:for="{{item.dynamics.imgArr}}" 
+                wx:for-item="imgItem" wx:key="{{}}" data-id="{{item.dynamics.id}}" bindtap='imgYu'></image>
+              </view>
+              <view wx:if="{{item.dynamics.imgArr&&item.dynamics.imgArr.length>3&&item.dynamics.imgArr.length<7}}" class='circle-item-img3'>
+                <image src='{{imgItem}}' wx:for="{{item.dynamics.imgArr}}" 
+                wx:for-item="imgItem" wx:key="{{}}" data-id="{{item.dynamics.id}}" bindtap='imgYu'></image>
+              </view>
+              <view wx:if="{{item.dynamics.imgArr&&item.dynamics.imgArr.length>6}}" class='circle-item-img4'>
+                <image src='{{imgItem}}' wx:for="{{item.dynamics.imgArr}}" 
+                wx:for-item="imgItem" wx:key="{{}}" data-id="{{item.dynamics.id}}" bindtap='imgYu'></image>
+              </view>
+            </view>
+            <view class='circle-item-operation'>
+              <view class='circle-item-time'>{{item.dynamics.showTimeTxt}}</view>
+              <view class='circle-item-delete' data-id="{{item.dynamics.id}}" bindtap='deleteCircle'>
+                <image class='circle-delete-img' src='/icons/delete.png'></image> 删除
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="loadmore-pullup" hidden="{{hidePullUp}}">
+        <view>正在加载...</view>
+      </view>
+      <view class="no-more-load" hidden="{{hideNoMore}}">
+        <view>已经见底啦</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

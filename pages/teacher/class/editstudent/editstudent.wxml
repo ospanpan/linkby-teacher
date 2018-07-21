@@ -1,0 +1,18 @@
+<view class="pageBody">
+  <view class='us-name'>孩子姓名</view>
+  <view class='us-text'>
+    <input value='{{realName}}' bindinput='student_input'/>
+  </view>
+  <view class='us-name'>家属关系</view>
+  <view class='us-text'>
+    <picker bindchange="bindAppellationChange" value="{{appellationType}}" range="{{appellationTypeArr}}" class='class-p-class appellation-picker' range-key="text">
+          <view class="appellation-picker-view">{{appellationTypeArr[appellationType].text}}</view>
+      </picker>
+    <image src='/icons/return.png'></image>
+  </view>
+  <view class='us-name'>手机号码</view>
+  <view class='us-text'>
+    <input value='{{phoneNum}}' bindinput='phoneNum_input'/>
+  </view>
+  <view class='class-btn' bindtap='saveStudent'>保存</view>
+</view>

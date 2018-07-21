@@ -1,0 +1,33 @@
+<view class="pageBody">
+  <view class='class-input'>
+    <view class='class-txt'>
+      <image src='/icons/login-sho.png' style='width:25rpx;'></image>
+      <input type="text" placeholder="学校" placeholder-class="class-p-class"  value='{{schoolName}}' readonly/>
+    </view>
+    <view class='class-txt' bindtap='selGrade'>
+      <image src='/icons/grade.png' style='width:25rpx;'></image>
+      <input disabled type="text" placeholder="年级" placeholder-class="class-p-class" value="{{gradeName}}"/>
+      <image class='class-v-clean imgSelect' src='/icons/return.png'></image>
+    </view>
+
+    <view class='class-txt'>
+      <image src='/icons/class.png' style='width:25rpx;'></image>
+      <input type="text" placeholder="班级" placeholder-class="class-p-class" value="{{classNo}}" bindinput='classNo_input'/>
+    </view>
+    <view class='class-btn'  bindtap='saveClasses'>创建班级</view>
+  </view>
+  <view class='class-shadow' hidden="false">
+  </view>
+  <view class='class-configBody' hidden="false">
+    <view class='class-config'>
+      <view>请输入完整信息</view>
+      <view class='class-config-btn'>确定</view>
+    </view>
+  </view>
+  <view class='class-configBodyTow' hidden="false">
+    <view class='class-config'>
+      <view>创建班级后，您可以发布作业，发布通知，共享班级信息等</view>
+      <view class='class-config-btn'>创建班级</view>
+    </view>
+  </view>
+</view>

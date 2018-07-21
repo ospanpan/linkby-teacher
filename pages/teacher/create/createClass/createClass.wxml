@@ -1,0 +1,17 @@
+<view class="pageBody gradeBody">
+  <view class='createClass-QRcode'>
+    <view class='createClass-QRcodeImg'>
+    </view>
+  </view>
+  <view class='createClass-info'>
+    老师们都在用的app
+  </view>
+  <view class='createClass-content'>
+    创建班级后，您可以发布作业，发布通知    
+  </view>
+  <view class='createClass-content'>
+    共享班级信息等    
+  </view>
+  
+  <view class='createClass-parent' bindtap='toClass'>创建班级</view>
+</view>

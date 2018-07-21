@@ -1,0 +1,14 @@
+<view class="pageBody noticeBody">
+  <view class='notice-body'>
+    <view class='notice-title'>
+    {{notice.title}}
+    </view>
+    <view class='notice-content'>
+    {{notice.content}}
+    </view>
+      <view class='notice-date'>
+      {{notice.createDate}}
+      </view>
+   </view>
+</view>
+<loading hidden="{{hiddenLoading}}">正在加载</loading>

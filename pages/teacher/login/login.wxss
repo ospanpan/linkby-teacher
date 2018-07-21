@@ -1,0 +1,264 @@
+.login-logo {
+  height: 400rpx;
+  background-color: #4d4d4d;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-logo view {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 20rpx;
+  font-size: 27rpx;
+}
+
+.login-logo image {
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.login-input {
+  width: 70%;
+  height: 400rpx;
+  margin-top: 100rpx;
+}
+
+.login-txt {
+  width: 100%;
+  height: 80rpx;
+  margin-bottom: 15rpx;
+  border-bottom: 1rpx solid #ccc;
+  display: flex;
+}
+
+.login-txt image {
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  top: 20rpx;
+}
+
+.login-txt input {
+  padding-left: 20rpx;
+  flex: 1;
+  position: relative;
+  top: 15rpx;
+  margin-right: 10rpx;
+}
+
+.login-p-class {
+  color: #ccc;
+  font-size: 26rpx;
+}
+
+.login-verification {
+  position: relative;
+  right: 10rpx;
+  font-size: 27rpx;
+  top: 10rpx;
+  background-color: #f2f2f2;
+  width: 220rpx;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 20rpx;
+}
+
+.login-v-input {
+  width: 120rpx;
+}
+
+.login-v-img {
+  position: relative;
+  left: -60rpx;
+}
+
+.login-v-clean {
+  left: 0rpx;
+}
+
+.login-btn {
+  height: 80rpx;
+  border-radius: 30rpx;
+  background-color: #1abc9c;
+  line-height: 80rpx;
+  color: #fff;
+  margin-top: 70rpx;
+  text-align: center;
+}
+
+.login-switch {
+  float: right;
+  margin-top: 25rpx;
+  color: #888;
+  font-size: 26rpx;
+}
+
+.login-shadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #333;
+  z-index: 9;
+  opacity: 0.5;
+}
+
+.login-configBody,.login-configBodyTow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-config,.login-class {
+  width: 500rpx;
+  height: 250rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  margin-top: -100rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 32rpx;
+  color: black;
+}
+
+.login-config view {
+  margin-top: 40rpx;
+}
+
+.login-config-btn {
+  background-color: #1abc9c;
+  width: 250rpx;
+  height: 90rpx;
+  border-radius: 40rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 32rpx;
+}
+.login-class{
+  height: auto;
+  width: 600rpx;
+  margin-top: -120rpx;
+}
+.login-class view{
+  margin-top: 50rpx;
+}
+.login-classList{
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+}
+.login-class-title{
+  text-align: left;
+  width: 80%;
+  font-size: 28rpx;
+}
+.login-classList view{
+  width: 220rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #ff9e5c;
+  border-radius: 40rpx;
+  border: 1rpx solid #ff9e5c;
+  float: left;
+  margin: 0 20rpx;
+}
+.login-classList .selectView{
+  color: #ffffff;
+  background-color:#ff9e5c; 
+}
+.login-classBtn{
+  width: 100%;
+  height:90rpx;
+  line-height: 90rpx;
+  background-color: #1abc9c;
+  color: #ffffff;
+  text-align: center;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.login-class{
+  position: relative;
+}
+
+.login-tabs{
+  height: 100rpx;
+  background-color: #ff9e5c;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-tabs .login-tab{
+  width: 50%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 30rpx;
+  position: relative;
+
+}
+.login-w-s{
+    width: 0;
+    height: 0;
+    border-left: 10rpx solid transparent;
+    border-right: 10rpx solid transparent;
+    border-bottom: 10rpx solid #ffffff;
+    position: absolute;
+    top: 60rpx;
+    left: 47%;
+}
+.login-configBodyTow .login-config{
+  width:470rpx;
+  height: 260rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  padding: 50rpx 50rpx 0 50rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 28rpx;
+
+  color: black;
+}
+
+.login-configBodyTow .login-config view{
+  margin-top: 0;
+}
+
+.login-configBodyTow .login-config .login-config-btn{
+  width: 100%;
+  margin-top: 40rpx;
+}
+
+.to-regist{
+  float: left;
+  margin-top: 25rpx;
+  color: #888;
+  font-size: 26rpx;
+}
+
+.login-btn-disabled{
+  background-color: #e6e6e6;
+}
+.send-btn-enable{
+  background-color: #1abc9c;
+  color: #ffffff;
+}

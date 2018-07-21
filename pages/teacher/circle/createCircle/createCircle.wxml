@@ -1,0 +1,42 @@
+<view class="pageBody">
+  <view class='cc-input'>
+    <textarea class="weui-textarea" placeholder="说点什么" style="height: 300rpx" value='{{content}}' bindinput='content_input'/>
+    <view class="weui-textarea-counter">{{content.length}}/200</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-uploader__bd">
+      <view class="weui-uploader__files" id="uploaderFiles">
+        <block wx:for="{{files}}" wx:key="*this">
+          <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+            <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+          </view>
+        </block>
+        <!-- <view class="weui-uploader__file">
+                                    <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
+                                </view>
+                                <view class="weui-uploader__file">
+                                    <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
+                                </view> -->
+        <!-- <view class="weui-uploader__file">添加成功路径显示
+                                    <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
+                                </view> -->
+        <!-- <view class="weui-uploader__file weui-uploader__file_status"> 添加失败默认错误
+                                    <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
+                                    <view class="weui-uploader__file-content">
+                                        <icon type="warn" size="23" color="#F43530"></icon>
+                                    </view>
+                                </view>
+                                <view class="weui-uploader__file weui-uploader__file_status"> 添加百分百
+                                    <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
+                                    <view class="weui-uploader__file-content">50%</view>
+                                </view> -->
+      </view>
+      <view class="weui-uploader__input-box">
+        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <button class="weui-btn" type="primary" bindtap='pubDynamics'>确认发布</button>
+  </view>
+</view>

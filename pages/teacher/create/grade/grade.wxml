@@ -1,0 +1,12 @@
+<view class="pageBody gradeBody">
+  <view class='grade-item' wx:for="{{allGrades}}" wx:key="{{}}">
+    <view class='grade-head'>
+      <view class='grade-title'>
+        <image src='/icons/head.png'></image> {{item.title}}
+      </view>
+    </view>
+    <view class='grade-list'>
+      <view wx:for="{{item.gradeList}}" wx:for-item="citem" wx:key="{{}}" bindtap="selectGrade" data-id="{{citem.id}}" data-name="{{item.title+'-'+citem.title}}" class="{{citem.id==selGradeId ? 'grade-item-select' : ''}}">{{citem.title}}</view>
+    </view>
+  </view>
+</view>

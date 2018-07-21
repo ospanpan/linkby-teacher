@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/teacher/homepage/task/task",
+    "pages/teacher/homepage/notice/notice",
+    "pages/teacher/homepage/cycle/cycle",
+    "pages/teacher/homepage/my/my",
+    "pages/teacher/homepage/homepage",
+    "pages/teacher/login/login",
+    "pages/teacher/releasetask/releasetask",
+    "pages/teacher/circle/createCircle/createCircle",
+    "pages/teacher/notice/create/create",
+    "pages/teacher/task/check/check",
+    "pages/teacher/class/manage/manage",
+    "pages/teacher/class/editstudent/editstudent",
+    "pages/teacher/class/addstudent/addstudent",
+    "pages/teacher/create/class/class",
+    "pages/teacher/create/createClass/createClass",
+    "pages/teacher/create/confirm/confirm",
+    "pages/teacher/notice/check/check",
+    "pages/teacher/class/updateSchool/updateSchool",
+    "pages/teacher/create/grade/grade",
+    "pages/teacher/create/import/import",
+    "pages/teacher/task/create/create"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "领百教育",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/teacher/homepage/task/task",
+        "iconPath": "icons/class.png",
+        "selectedIconPath": "icons/class.png",
+        "text": "作业"
+      },
+      {
+        "pagePath": "pages/teacher/homepage/notice/notice",
+        "iconPath": "icons/task.png",
+        "selectedIconPath": "icons/task.png",
+        "text": "通知"
+      },
+      {
+        "pagePath": "pages/teacher/homepage/cycle/cycle",
+        "iconPath": "icons/not.png",
+        "selectedIconPath": "icons/not.png",
+        "text": "状态"
+      },
+      {
+        "pagePath": "pages/teacher/homepage/my/my",
+        "iconPath": "icons/my.png",
+        "selectedIconPath": "icons/my.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

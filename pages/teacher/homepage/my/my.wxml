@@ -1,0 +1,45 @@
+<view class="pageBody">
+  <scroll-view class="my" scroll-y='true'>
+    <view class="my-scroll-body">
+      <view class='my-head'>
+        <image src='/icons/id_00001.png'></image>
+        <view>{{teacherInfo.realName}} 老师</view>
+      </view>
+      <view class='my-body' scroll-y='true'>
+        <view class='my-classList'>
+          <view class='my-classCheck'>查看班级</view>
+
+          <view wx:if="{{allClasses.length>0}}" wx:for="{{allClasses}}" wx:for-item="cItem" wx:for-index="idx" class='my-classInfo {{idx==allClasses.length-1 ? "my-lastClassInfo" : ""}}' wx:key="{{cItem.classesId}}">
+            <image src='/icons/id_00001.png'></image>
+            <view class='my-className'>{{cItem.gradeName}}{{cItem.alias}}</view>
+            <view class='my-classBtn' data-classid="{{cItem.classesId}}" data-schoolid="{{cItem.schoolId}}" data-classname="{{cItem.schoolName}}{{cItem.alias}}" wx:if="{{teacherInfo.curClassesId==cItem.classesId}}">当前</view>
+            <view class='my-classSwitchBtn' data-classid="{{cItem.classesId}}" data-schoolid="{{cItem.schoolId}}" data-classname="{{cItem.schoolName}}{{cItem.alias}}" wx:if="{{teacherInfo.curClassesId!=cItem.classesId}}" bindtap='toChangeClasses'>切换</view>
+            <view class='my-classBtn mgl20' data-classid="{{cItem.classesId}}" data-schoolid="{{cItem.schoolId}}" data-classname="{{cItem.schoolName}}{{cItem.alias}}" bindtap='toManageClasses'>管理</view>
+          </view>
+
+          <view wx:if="{{allClasses.length==0}}" class='my-classInfo my-lastClassInfo my-classInfo-center'>
+          您暂未加入任何班级
+          </view>
+
+        </view>
+        <view class='my-create-class' bindtap='toCreateManager'>
+          +创建班级
+        </view>
+
+        <view class='my-circle'>
+          <view>意见反馈</view>
+          <image class='my-circle-ret' src='/icons/return.png'></image>
+        </view>
+        <!-- <view class='my-circle my-Lastcircle'>
+          <view class='my-Lastcircle-border'>
+            <view>意见反馈</view>
+            <image class='my-circle-ret' src='/icons/return.png'></image>
+          </view>
+        </view> -->
+        <view class='my-signOut' bindtap='toLogout'>
+          <view>退出</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

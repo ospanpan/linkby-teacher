@@ -1,0 +1,44 @@
+<view class="pageBody">
+  <view class='check-head'>
+    <view class='check-title'>
+    {{notice.title}}
+    </view>
+    <view class='check-content'>
+    {{notice.content}}
+    </view>
+  </view>
+  <view class='check-task'>
+    <view class='check-task-content'>
+    发表于 {{notice.createDate}}
+    </view>
+  </view>
+  <view class='check-body'>
+    <view class='check-tab'>
+      <view class="{{wwc?'check-tabItem check-tabItem-select':'check-tabItem'}}" bindtap='noComplete'>
+        未阅读（{{ notice.totalStudents - notice.readStudents}}）
+      </view>
+      <view class="{{!wwc?'check-tabItem check-tabItem-select':'check-tabItem'}}" bindtap='complete'>
+        已阅读（{{notice.readStudents}}）
+      </view>
+    </view>
+    <view class='check-list' wx:if="{{wwc}}">
+      <view wx:for="{{unreadList}}" wx:for-item="tItem" wx:key="{{}}" class='check-item'>
+        <image src='/icons/id_00001.png'></image>
+        <view class='check-name'>{{tItem.realName}}</view>
+      </view>
+    </view>
+    <view class='check-listTwo' wx:if="{{!wwc}}">
+      <view class="check-listTwo-body" wx:for="{{readList}}" wx:for-item="tItem" wx:key="{{}}">
+        <view class='check-listTwo-img'>
+          <image src='/icons/id_00001.png'></image>          
+        </view>
+        <view class='check-listTwo-name'>
+          {{tItem.realName}}
+          <view class='check-listTwo-date'>
+            {{tItem.createDateTxt}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<view class="register-body">
+  <view class="register-title">您好，老师</view>
+  <view class="register-info">
+    为了帮助您更好的开展工作
+  </view>
+  <view class="register-info">
+    请完善您的<span>真实个人信息</span> 
+  </view>
+  <view class='register-btn'>
+    去完善信息
+  </view>
+</view>

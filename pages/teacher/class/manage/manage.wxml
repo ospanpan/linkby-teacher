@@ -1,0 +1,38 @@
+<view class="pageBody">
+  <scroll-view class='class-member-list' scroll-y='true'>
+    <view class='class-className' bindtap='toEditClass'>
+      <view class='class-portrait'>
+        <image src='/icons/id_00001.png'></image>
+      </view>
+      <view class='class-name'>{{className}}</view>
+      <image class='class-ret' src='/icons/return.png'></image>
+    </view>
+    <view class='class-member-list'>
+      <view class='class-member-list'>
+        <view class='class-member-head'>成员管理</view>
+        <view wx:if="{{studentList.length>0}}" wx:key="{{}}">
+          <view wx:for="{{studentList}}" wx:for-item="item" data-index="{{index}}" wx:key="{{}}" class="class-member-body {{item.isTouchMove ? 'touch-move-active' : ''}}" bindtouchmove="touchmove">
+            <view class='class-member-item' bindtouchstart="touchstart">
+              <view class='class-state'></view>
+              <view class='class-portrait'>
+                <image src='/icons/id_00001.png'></image>
+              </view>
+              <view class='class-name'>{{item.realName}}</view>
+              <view class='class-phoneNum'>{{item.phoneNum}}</view>
+              <image class='class-ret' src='/icons/return.png'  data-studentid='{{item.id}}' data-classid='{{item.classesId}}' data-schoolid='{{item.schoolId}}' bindtap='toEditStudent'></image>
+            </view>
+            <view class='del' data-index="{{index}}">
+              <image src='/icons/call.png' data-phonenum="{{item.phoneNum}}" bindtap='toCall'></image>
+              <image src='/icons/delete-list.png' data-studentid='{{item.id}}' data-classid='{{item.classesId}}' data-schoolid='{{item.schoolId}}' bindtap='toDelete'></image>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{studentList.length==0}}" class='class-member-item no-student'>
+          该班级暂没有学生
+        </view>
+      </view>
+      <view class='add-student' bindtap="toAddStudent">添加成员</view>
+      <view class='add-student'  bindtap="toImportFamily">导入家长</view>
+    </view>
+  </scroll-view>
+</view>

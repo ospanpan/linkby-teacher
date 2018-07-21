@@ -1,0 +1,61 @@
+<view class="pageBody">
+  <view class='login-logo'>
+    <view>
+      <image src='/icons/teacher-logo.png'></image>
+    </view>
+    <view>领百教育</view>
+  </view>
+  <!-- <view class='login-tabs'>
+    <view class='login-tab'>登录
+      <view class='login-w-s'></view>
+    </view>
+    <view class='login-tab'>完善信息
+      <view class='login-w-s' hidden='true'></view>
+    </view>
+  </view> -->
+  <view class='login-input'>
+    <view class='login-txt'>
+      <image src='/icons/phone.png' style='width:25rpx;'></image>
+      <input type="text" placeholder="手机号码" placeholder-class="login-p-class"  value='{{userPhone}}' bindinput="checkMobile"/>
+      <image class='login-v-clean' src='/icons/clean.png' wx:if="{{hasMobile}}" bindtap="clearMobile"></image>
+    </view>
+    <view class='login-txt'>
+      <image src='/icons/verification.png' style='width:25rpx;'></image>
+      <input type="text" class="login-v-input" placeholder="验证码" placeholder-class="login-p-class" bindinput='inputYzm'/>
+      <image class='login-v-img' src='/icons/correct.png'></image>
+      <view class='login-verification {{ sendable ? "send-btn-enable" : ""}}' bindtap='sendVerification'>{{verificationText}}</view>
+    </view>
+    <!-- <view class='{{loginBtnCls}}' bindtap="toConfirm">{{loginBtnTxt}}</view> -->
+    <button class='{{loginBtnCls}}' open-type="getUserInfo" bindtap="toConfirm">{{loginBtnTxt}}</button> 
+    <!--<view class='to-regist'  bindtap="toRegist"> {{toRegistTxt}}</view>-->
+    <view class='login-switch'  bindtap="toTeacher">切换为家长端 ></view>    
+  </view>
+  
+  <view class='login-input'  hidden='true' >
+    <view class='login-txt'>
+      <image src='/icons/login-pra.png' style='width:25rpx;'></image>
+      <input type="text" placeholder="您的真实姓名" placeholder-class="login-p-class" />
+    </view>
+    <view class='login-txt'>
+      <image src='/icons/login-sho.png' style='width:25rpx;'></image>
+      <input type="text" placeholder="输入您的学校" placeholder-class="login-p-class" />
+    </view>
+        <view class='login-btn'>确认</view>
+  </view>
+
+  <view class='login-shadow'  hidden="false">
+  </view>
+
+  <view class='login-configBody' hidden="false">
+    <view class='login-config'>
+      <view>手机号或验证码错误</view>
+      <view class='login-config-btn'>确定</view>
+    </view>
+  </view>
+  <view class='login-configBodyTow'  hidden="false">
+    <view class='login-config'>
+      <view>创建班级后，您可以发布作业，发布通知，共享班级信息等</view>
+      <view class='login-config-btn'>创建班级</view>
+    </view>
+  </view>
+</view>
