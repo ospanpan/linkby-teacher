@@ -1,7 +1,7 @@
 <view class="pageBody">
   <scroll-view class="homepage">
     <view class='homepage-tabs'>
-      <view class="{{showRelease?'viewSelect':''}}" bindtap='switchTabs'>发布作业</view>
+      <view class="{{showRelease?'viewSelect':''}}" bindtap='switchTabs'>发布作业</view> 
       <view class="{{!showRelease?'viewSelect':''}}" bindtap='switchTabsTwo'>作业反馈</view>
     </view>
     <view class="homepage-scrool-body">
