@@ -83,6 +83,9 @@ Page({
             curModule.setData({ hideNoMore: false });
           }
         });
+      } else {
+        curModule.setData({ hidePullUp: true });
+        curModule.setData({ hideNoMore: false });
       }
     }, 300);    
   },
@@ -225,7 +228,7 @@ Page({
         if (data.apiStatus == "200") {
           curModule.setData({ curPage_notice: data.data.curPage });
           curModule.setData({ totalPage_notice: data.data.pageCount });
-          curModule.setData({ noticeList: data.data.dataList });
+          curModule.setData({ noticeList: curModule.data.noticeList.concat(data.data.dataList) });
         } else {
           wx.showToast({ title: data.msg });
         }

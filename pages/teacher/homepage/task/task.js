@@ -201,7 +201,7 @@ Page({
         if (data.apiStatus == "200") {
           curModule.setData({ curPage_homework: data.data.curPage });
           curModule.setData({ totalPage_homework: data.data.pageCount });
-          curModule.setData({ homeworkList: data.data.dataList });          
+          curModule.setData({ homeworkList: curModule.data.homeworkList.concat(data.data.dataList) });          
         } else {
           wx.showToast({ title: data.msg });
         }

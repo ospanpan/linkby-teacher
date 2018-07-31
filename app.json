@@ -4,7 +4,6 @@
     "pages/teacher/homepage/notice/notice",
     "pages/teacher/homepage/cycle/cycle",
     "pages/teacher/homepage/my/my",
-    "pages/teacher/homepage/homepage",
     "pages/teacher/login/login",
     "pages/teacher/releasetask/releasetask",
     "pages/teacher/circle/createCircle/createCircle",

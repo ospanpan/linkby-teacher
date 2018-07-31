@@ -179,7 +179,7 @@ Page({
               data.data.dataList[i].dynamics.imgArr = data.data.dataList[i].dynamics.imageIds.split(",");
             }
           }
-          curModule.setData({ dynamicsList: data.data.dataList });
+          curModule.setData({ dynamicsList: curModule.data.dynamicsList.concat(data.data.dataList) });
           curModule.setData({ curPage_dynamics: data.data.curPage });
           curModule.setData({ totalPage_dynamics: data.data.pageCount });
         } else {
